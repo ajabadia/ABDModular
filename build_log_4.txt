@@ -1,0 +1,30 @@
+========================================
+CZ-101 Emulator Build Script
+========================================
+
+0. Inicializando entorno Visual Studio 2022...
+Found VS 18 Community
+**********************************************************************
+** Visual Studio 2026 Developer Command Prompt v18.1.0
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[DEBUG:ext\vcvars.bat] Found potential v145 version file: 'Microsoft.VCToolsVersion.VC.14.50.18.0.txt'
+[DEBUG:ext\vcvars.bat] Testing v145 version file: 'Microsoft.VCToolsVersion.VC.14.50.18.0.txt'
+
+1. Buscando CMake...
+   CMake encontrado: cmake
+
+2. Configurando Modular Test...
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/desarrollos/ABDModular/build_test
+
+3. Compilando Modular Test...
+Versión de MSBuild 18.0.5+e22287bf1 para .NET Framework
+
+  ModularTest.cpp
+D:\desarrollos\ABDModular\Source\Modular\Modules\Sequencers\PolySequencer\v1\PolySequencer.h(3,10): error C1083: No se puede abrir el archivo incluir: '../../../../../Core/Foundation/v1/Module.h': No such file or directory [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+  (compiling source file '../Source/Tests/ModularTest.cpp')
+  
+Error: Compilacion fallida

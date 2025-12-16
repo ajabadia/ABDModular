@@ -1,0 +1,40 @@
+========================================
+CZ-101 Emulator Build Script
+========================================
+
+0. Inicializando entorno Visual Studio 2022...
+Found VS 18 Community
+**********************************************************************
+** Visual Studio 2026 Developer Command Prompt v18.1.0
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[DEBUG:ext\vcvars.bat] Found potential v145 version file: 'Microsoft.VCToolsVersion.VC.14.50.18.0.txt'
+[DEBUG:ext\vcvars.bat] Testing v145 version file: 'Microsoft.VCToolsVersion.VC.14.50.18.0.txt'
+
+1. Buscando CMake...
+   CMake encontrado: cmake
+
+2. Configurando Modular Test...
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/desarrollos/ABDModular/build_test
+
+3. Compilando Modular Test...
+Versión de MSBuild 18.0.5+e22287bf1 para .NET Framework
+
+  ModularTest.cpp
+  ModularTest.vcxproj -> D:\desarrollos\ABDModular\build_test\Debug\ModularTest.exe
+
+4. Ejecutando Test...
+Running Modular Tests...
+[PASS] AudioFrame init
+[PASS] Oscillator processing
+[PASS] Envelope processing
+[PASS] Filter processing
+[PASS] LFO processing
+[PASS] Mixer processing
+[PASS] Sequencer processing
+[PASS] Delay processing
+All Modular Tests Passed!
+TEST PASSED

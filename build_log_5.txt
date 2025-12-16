@@ -1,0 +1,34 @@
+========================================
+CZ-101 Emulator Build Script
+========================================
+
+0. Inicializando entorno Visual Studio 2022...
+Found VS 18 Community
+**********************************************************************
+** Visual Studio 2026 Developer Command Prompt v18.1.0
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[DEBUG:ext\vcvars.bat] Found potential v145 version file: 'Microsoft.VCToolsVersion.VC.14.50.18.0.txt'
+[DEBUG:ext\vcvars.bat] Testing v145 version file: 'Microsoft.VCToolsVersion.VC.14.50.18.0.txt'
+
+1. Buscando CMake...
+   CMake encontrado: cmake
+
+2. Configurando Modular Test...
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/desarrollos/ABDModular/build_test
+
+3. Compilando Modular Test...
+Versión de MSBuild 18.0.5+e22287bf1 para .NET Framework
+
+  ModularTest.cpp
+C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\__msvc_heap_algorithms.hpp(20,1): error C2598: la especificación de vinculación debe estar en el ámbito global [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+  (compiling source file '../Source/Tests/ModularTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\__msvc_heap_algorithms.hpp(20,1): error C2870: 'std': una definición de espacio de nombres debe aparecer en el ámbito del archivo o directamente dentro de otra definición de espacio de nombres [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+  (compiling source file '../Source/Tests/ModularTest.cpp')
+  
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(100,5): error C1903: no se puede recuperar de errores anteriores; se detiene la compilación [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+Error: Compilacion fallida

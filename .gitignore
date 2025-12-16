@@ -1,0 +1,38 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.pdb
+*.ipch
+*.aps
+*.opendb
+*.db
+
+# Build
+build/
+build_test/
+cmake-build-*/
+out/
+bin/
+obj/
+*.exe
+*.lib
+*.dll
+*.iobj
+*.ipdb
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Temporary
+tmp/
+*.log
+*.tmp
+*.bak
+ABDCZ101/
+test_modular.bat

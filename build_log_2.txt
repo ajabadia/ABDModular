@@ -1,0 +1,41 @@
+========================================
+CZ-101 Emulator Build Script
+========================================
+
+0. Inicializando entorno Visual Studio 2022...
+Found VS 18 Community
+**********************************************************************
+** Visual Studio 2026 Developer Command Prompt v18.1.0
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[DEBUG:ext\vcvars.bat] Found potential v145 version file: 'Microsoft.VCToolsVersion.VC.14.50.18.0.txt'
+[DEBUG:ext\vcvars.bat] Testing v145 version file: 'Microsoft.VCToolsVersion.VC.14.50.18.0.txt'
+
+1. Buscando CMake...
+   CMake encontrado: cmake
+
+2. Configurando Modular Test...
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/desarrollos/ABDModular/build_test
+
+3. Compilando Modular Test...
+Versión de MSBuild 18.0.5+e22287bf1 para .NET Framework
+
+  ModularTest.cpp
+C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\numbers(11): warning STL4038: The contents of <numbers> are available only with C++20 or later. [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Modular\Modules\Filters\StandardFilter\v1\StandardFilter.h(7,11): error C2870: 'Modular': una definición de espacio de nombres debe aparecer en el ámbito del archivo o directamente dentro de otra definición de espacio de nombres [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+  (compiling source file '../Source/Tests/ModularTest.cpp')
+  
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(59,25): error C2065: 'audioIn': identificador no declarado [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(66,57): error C2065: 'audioIn': identificador no declarado [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(70,31): error C2065: 'audioIn': identificador no declarado [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(80,5): error C2065: 'audioIn': identificador no declarado [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(81,5): error C2653: 'Core': no es un nombre de clase o espacio de nombres [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(81,11): error C2065: 'AudioFrame': identificador no declarado [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(81,22): error C2146: error de sintaxis: falta ';' delante del identificador 'mixOut' [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(81,22): error C2065: 'mixOut': identificador no declarado [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(81,50): error C2065: 'audioIn': identificador no declarado [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+D:\desarrollos\ABDModular\Source\Tests\ModularTest.cpp(82,5): error C2065: 'mixOut': identificador no declarado [D:\desarrollos\ABDModular\build_test\ModularTest.vcxproj]
+Error: Compilacion fallida
