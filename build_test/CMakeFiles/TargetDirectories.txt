@@ -1,0 +1,3 @@
+D:/desarrollos/ABDModular/build_test/CMakeFiles/ModularTest.dir
+D:/desarrollos/ABDModular/build_test/CMakeFiles/ALL_BUILD.dir
+D:/desarrollos/ABDModular/build_test/CMakeFiles/ZERO_CHECK.dir

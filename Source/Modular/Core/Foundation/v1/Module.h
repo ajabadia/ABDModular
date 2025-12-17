@@ -25,6 +25,17 @@ namespace Core
 class Module
 {
 public:
+    struct ParameterMetadata
+    {
+        std::string id;
+        std::string name;
+        float minValue = 0.0f;
+        float maxValue = 1.0f;
+        float defaultValue = 0.0f;
+        bool isToggle = false;
+        bool isInteger = false;
+    };
+
     virtual ~Module() = default;
 
     /**
@@ -63,16 +74,8 @@ public:
      */
     virtual void setParameter(const std::string& paramId, float value)
     {
-        if (parameters_.find(paramId) != parameters_.end())
-        {
-            parameters_[paramId] = value;
-        }
-        else
-        {
-            // Auto-create parameter if it doesn't exist (flexible)
-            // Or log warning in strict mode.
-            parameters_[paramId] = value;
-        }
+        // In the future: Clamp value using metadata if available
+        parameters_[paramId] = value;
     }
 
     /**
@@ -85,6 +88,11 @@ public:
             return it->second;
         return 0.0f;
     }
+
+    // New Metadata System
+    const std::vector<ParameterMetadata>& getParameterMetadata() const { return parameterSpecs_; }
+
+    virtual std::string getName() const { return "Unknown Module"; }
 
     /**
      * @brief Resets the internal state (e.g., clear buffers).
@@ -100,6 +108,20 @@ protected:
     // for thread safety, but for this modular prototype, a map is sufficient
     // provided we update it carefully or use lock-free concepts later.
     std::unordered_map<std::string, float> parameters_;
+    std::vector<ParameterMetadata> parameterSpecs_;
+
+    void registerParameter(const std::string& id, const std::string& name, float min, float max, float def)
+    {
+        ParameterMetadata meta;
+        meta.id = id;
+        meta.name = name;
+        meta.minValue = min;
+        meta.maxValue = max;
+        meta.defaultValue = def;
+        
+        parameterSpecs_.push_back(meta);
+        parameters_[id] = def; // Set initial value
+    }
 };
 
 } // namespace Core

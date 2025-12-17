@@ -15,10 +15,12 @@ public:
 
     StandardLFO()
     {
-        parameters_["frequency"] = 1.0f; // Hz (Low freq)
-        parameters_["depth"] = 1.0f;     // Amplitude
-        parameters_["waveform"] = 0.0f;  // Sine
+        registerParameter("frequency", "Frequency", 0.1f, 20.0f, 1.0f);
+        registerParameter("depth", "Depth", 0.0f, 1.0f, 1.0f);
+        registerParameter("waveform", "Waveform", 0.0f, 4.0f, 0.0f);
     }
+
+    std::string getName() const override { return "StandardLFO"; }
 
     void prepareToPlay(double sampleRate, int maxBlockSize) override
     {

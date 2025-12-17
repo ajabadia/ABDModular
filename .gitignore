@@ -8,23 +8,25 @@
 *.opendb
 *.db
 
-# Build
+# Build artifacts
 build/
-build_test/
-cmake-build-*/
-out/
-bin/
-obj/
+build_sandbox/
 *.exe
+*.obj
 *.lib
 *.dll
-*.iobj
-*.ipdb
+*.pdb
+*.idb
+*.ilk
+test_modular.bat
 
-# CMake
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
+# Bundle artifacts
+TOTALCODE*.txt
+CONTROL_FILES*.txt
+
+# IDE
+.vs/
+.vscode/
 *.sln
 *.vcxproj
 *.vcxproj.filters

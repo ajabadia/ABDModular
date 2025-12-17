@@ -16,10 +16,12 @@ public:
 
     StandardFilter()
     {
-        parameters_["cutoff"] = 20000.0f; // Hz
-        parameters_["resonance"] = 0.0f;  // 0.0 - 1.0 (aprox, Q factor)
-        parameters_["mode"] = 0.0f;       // 0=LP, 1=HP, 2=BP
+        registerParameter("cutoff", "Cutoff", 20.0f, 20000.0f, 20000.0f);
+        registerParameter("resonance", "Resonance", 0.0f, 0.99f, 0.0f);
+        registerParameter("mode", "Mode", 0.0f, 2.0f, 0.0f); // 0=LP, 1=HP, 2=BP
     }
+    
+    std::string getName() const override { return "StandardFilter"; }
 
     void prepareToPlay(double sampleRate, int maxBlockSize) override
     {

@@ -44,13 +44,15 @@ public:
     PolySequencer()
     {
         // Parameters
-        parameters_["tempo"] = 120.0f;
-        parameters_["on"] = 0.0f; // 0=Stop, 1=Play
-        parameters_["mode"] = 0.0f; // 0=Fwd, 1=Back, 2=Rnd
+        registerParameter("tempo", "Tempo", 40.0f, 300.0f, 120.0f);
+        registerParameter("on", "Run", 0.0f, 1.0f, 0.0f);
+        registerParameter("mode", "Mode", 0.0f, 2.0f, 0.0f);
         
         // Default track
         addTrack("Track 1");
     }
+
+    std::string getName() const override { return "PolySequencer"; }
 
     void prepareToPlay(double sampleRate, int maxBlockSize) override
     {

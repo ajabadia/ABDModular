@@ -15,10 +15,12 @@ public:
     
     SimpleMixer()
     {
-        parameters_["gainA"] = 1.0f;
-        parameters_["gainB"] = 1.0f;
-        parameters_["master"] = 1.0f;
+        registerParameter("gainA", "Gain A", 0.0f, 2.0f, 1.0f);
+        registerParameter("gainB", "Gain B", 0.0f, 2.0f, 1.0f);
+        registerParameter("master", "Master Gain", 0.0f, 2.0f, 1.0f);
     }
+
+    std::string getName() const override { return "SimpleMixer"; }
 
     // Mixer needs explicit input management. 
     // In our single-chain `processFrame(input)` architecture, a module usually modifies 'input'.

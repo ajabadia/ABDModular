@@ -15,12 +15,14 @@ public:
 
     StandardOscillator()
     {
-        // Initialize default parameters
-        parameters_["frequency"] = 440.0f;
-        parameters_["detune"] = 0.0f;
-        parameters_["waveform"] = 0.0f; // 0 = Sine
-        parameters_["level"] = 1.0f;
+        // Initialize default parameters with ranges
+        registerParameter("frequency", "Frequency", 20.0f, 20000.0f, 440.0f);
+        registerParameter("detune", "Detune", -12.0f, 12.0f, 0.0f);
+        registerParameter("waveform", "Waveform", 0.0f, 4.0f, 0.0f);
+        registerParameter("level", "Level", 0.0f, 1.0f, 1.0f);
     }
+
+    std::string getName() const override { return "StandardOscillator"; }
 
     void prepareToPlay(double sampleRate, int maxBlockSize) override
     {

@@ -14,10 +14,12 @@ class StandardDelay : public Core::Module
 public:
     StandardDelay()
     {
-        parameters_["time"] = 0.5f;     // Seconds (500ms)
-        parameters_["feedback"] = 0.3f; // 0..1
-        parameters_["mix"] = 0.5f;      // Dry/Wet
+        registerParameter("time", "Time", 0.0f, 2.0f, 0.5f);
+        registerParameter("feedback", "Feedback", 0.0f, 0.95f, 0.3f);
+        registerParameter("mix", "Mix", 0.0f, 1.0f, 0.5f);
     }
+
+    std::string getName() const override { return "StandardDelay"; }
 
     void prepareToPlay(double sampleRate, int maxBlockSize) override
     {

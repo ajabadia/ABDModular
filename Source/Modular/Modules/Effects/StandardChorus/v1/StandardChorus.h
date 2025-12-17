@@ -15,12 +15,14 @@ class StandardChorus : public Core::Module
 public:
     StandardChorus()
     {
-        parameters_["rate"] = 0.5f;     // Hz
-        parameters_["depth"] = 0.005f;  // Seconds (5ms modulation)
-        parameters_["delay"] = 0.020f;  // Base delay 20ms
-        parameters_["mix"] = 0.5f;
-        parameters_["feedback"] = 0.2f;
+        registerParameter("rate", "Rate", 0.1f, 10.0f, 0.5f);
+        registerParameter("depth", "Depth", 0.0f, 0.02f, 0.005f);
+        registerParameter("delay", "Pre-Delay", 0.0f, 0.05f, 0.020f);
+        registerParameter("mix", "Mix", 0.0f, 1.0f, 0.5f);
+        registerParameter("feedback", "Feedback", 0.0f, 0.9f, 0.2f);
     }
+
+    std::string getName() const override { return "StandardChorus"; }
 
     void prepareToPlay(double sampleRate, int maxBlockSize) override
     {

@@ -14,11 +14,13 @@ public:
 
     ADSREnvelope()
     {
-        parameters_["attack"] = 0.1f;  // Seconds
-        parameters_["decay"] = 0.1f;   // Seconds
-        parameters_["sustain"] = 0.8f; // Level (0-1)
-        parameters_["release"] = 0.2f; // Seconds
+        registerParameter("attack", "Attack", 0.0f, 10.0f, 0.1f);
+        registerParameter("decay", "Decay", 0.0f, 10.0f, 0.1f);
+        registerParameter("sustain", "Sustain", 0.0f, 1.0f, 0.8f);
+        registerParameter("release", "Release", 0.0f, 10.0f, 0.2f);
     }
+
+    std::string getName() const override { return "ADSREnvelope"; }
 
     void handleMessage(const Core::ControlMessage& message) override
     {

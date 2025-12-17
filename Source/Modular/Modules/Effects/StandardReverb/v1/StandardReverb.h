@@ -77,9 +77,11 @@ class StandardReverb : public Core::Module
 public:
     StandardReverb()
     {
-        parameters_["mix"] = 0.3f;
-        parameters_["size"] = 1.0f; // Scale factor for delays
+        registerParameter("mix", "Mix", 0.0f, 1.0f, 0.3f);
+        registerParameter("size", "Room Size", 0.5f, 2.0f, 1.0f);
     }
+
+    std::string getName() const override { return "StandardReverb"; }
 
     void prepareToPlay(double sampleRate, int maxBlockSize) override
     {
